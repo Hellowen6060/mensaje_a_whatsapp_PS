@@ -60,7 +60,7 @@ C:\Hell\mensaje_a_whatsapp_PS\Mensaje_Whatsapp.ps1
 ```
 
 2. Asegúrate de tener **PowerShell** en Windows.
-3. Coloca los archivos `Indicativos.bin` y `Contactos.bin` en el mismo directorio que el `.ps1`. (Solo sidescargaste manualmente el .zip
+3. Coloca los archivos `Indicativos.bin` y `Contactos.bin` en el mismo directorio que el `.ps1`. (Solo si descargaste manualmente el .zip)
 4. Ejecuta el script: Mensaje_Whatsapp.ps1
 5. Navega por el menú principal
 
