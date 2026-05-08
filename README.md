@@ -40,13 +40,6 @@ Proyecto desarrollado en **PowerShell** para enviar mensajes instantáneos a nú
 4. Ejecuta el script:
 5. Navega por el menú principal
 
-ó
-
-Ejecuta en powershell:
-```powershell
-irm "https://raw.githubusercontent.com/Hellowen6060/mensaje_a_whatsapp_PS/refs/heads/main/Mensaje_Whatsapp.ps1" | iex
-```
-
 👨‍💻 Créditos
 Autor: Diego Garcia R.
 Asistente IA: Microsoft Copilot
