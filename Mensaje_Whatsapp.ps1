@@ -54,6 +54,17 @@ if (-not (Test-Path $indicativosPath)) {
     Write-Host "Indicativos encontrados." -ForegroundColor Green
 }
 
+# Verificar Contactos.bin
+if (-not (Test-Path $contactosPath)) {
+    Write-Host "Contactos no encontrados, se creará una nueva base!" -ForegroundColor Yellow
+    New-Item -Path $contactosPath -ItemType File -Force | Out-Null
+    Write-Host "Presiona ENTER para continuar..." -ForegroundColor White
+    Read-Host   # ✅ Pausa para que el cliente lo vea
+    Start-Sleep -Seconds 1
+} else {
+    Write-Host "Contactos encontrados." -ForegroundColor Cyan
+    Start-Sleep -Seconds 1
+}
 
 function Opcion-EnviarMensaje {
     do {
