@@ -34,10 +34,34 @@ Proyecto desarrollado en **PowerShell** para enviar mensajes instantáneos a nú
 
 ## 🖥️ Uso
 
-1. Clona o descarga este repositorio.
+1. Clona o descarga este repositorio así:
+
+Instala Git (si no lo tienes):
+
+Descárgalo desde: https://git-scm.com/downloads
+ó desde PowerShell:
+```powershell
+winget install --id Git.Git -e --source winget
+```
+
+Ve al directorio donde quieres clonar el repositorio, por ejemplo:
+```powershell
+cd C:\Hell
+```
+
+Ejecuta el comando de clonación:
+```powershell
+git clone https://github.com/Hellowen6060/mensaje_a_whatsapp_PS.git
+```
+
+Ejecuta:
+```powershell
+C:\Hell\mensaje_a_whatsapp_PS\Mensaje_Whatsapp.ps1
+```
+
 2. Asegúrate de tener **PowerShell** en Windows.
-3. Coloca los archivos `Indicativos.bin` y `Contactos.bin` en el mismo directorio que el `.ps1`.
-4. Ejecuta el script:
+3. Coloca los archivos `Indicativos.bin` y `Contactos.bin` en el mismo directorio que el `.ps1`. (Solo sidescargaste manualmente el .zip
+4. Ejecuta el script: Mensaje_Whatsapp.ps1
 5. Navega por el menú principal
 
 👨‍💻 Créditos
