@@ -39,32 +39,48 @@ function Obtener-PaisLocal {
 }
 
 # ==============================
-# Verificación de archivos necesarios
+# Verificación y descarga de archivos necesarios
 # ==============================
 $indicativosPath = Join-Path $PSScriptRoot "Indicativos.bin"
 $contactosPath   = Join-Path $PSScriptRoot "Contactos.bin"
 
+# URLs de GitHub (Raw)
+$indicativosUrl = "https://raw.githubusercontent.com/Hellowen6060/mensaje_a_whatsapp_PS/refs/heads/main/Indicativos.bin"
+$contactosUrl   = "https://raw.githubusercontent.com/Hellowen6060/mensaje_a_whatsapp_PS/refs/heads/main/Contactos.bin"
+
 # Verificar Indicativos.bin
 if (-not (Test-Path $indicativosPath)) {
-    Write-Host "Indicativos no encontrados, por favor descarga nuevamente esta herramienta!" -ForegroundColor Red
-    Write-Host "Presiona ENTER para cerrar..." -ForegroundColor White
-    Read-Host   # ✅ Pausa sin límite de tiempo
-    exit        # ✅ Cierra todo el script
+    Write-Host "Indicativos no encontrados, descargando desde GitHub..." -ForegroundColor Yellow
+    try {
+        Invoke-WebRequest -Uri $indicativosUrl -OutFile $indicativosPath
+        Write-Host ">> Indicativos descargados correctamente." -ForegroundColor Green
+    } catch {
+        Write-Host "Error al descargar Indicativos. Por favor verifica la conexión." -ForegroundColor Red
+        Write-Host "Presiona ENTER para cerrar..." -ForegroundColor White
+        Read-Host
+        exit
+    }
 } else {
     Write-Host "Indicativos encontrados." -ForegroundColor Green
 }
 
 # Verificar Contactos.bin
 if (-not (Test-Path $contactosPath)) {
-    Write-Host "Contactos no encontrados, se creará una nueva base!" -ForegroundColor Yellow
-    New-Item -Path $contactosPath -ItemType File -Force | Out-Null
-    Write-Host "Presiona ENTER para continuar..." -ForegroundColor White
-    Read-Host   # ✅ Pausa para que el cliente lo vea
-    Start-Sleep -Seconds 1
+    Write-Host "Contactos no encontrados, descargando desde GitHub..." -ForegroundColor Yellow
+    try {
+        Invoke-WebRequest -Uri $contactosUrl -OutFile $contactosPath
+        Write-Host ">> Contactos descargados correctamente." -ForegroundColor Green
+        Start-Sleep -Seconds 3
+    } catch {
+        Write-Host "Error al descargar Contactos. Se creará una nueva base vacía." -ForegroundColor Red
+        New-Item -Path $contactosPath -ItemType File -Force | Out-Null
+        Start-Sleep -Seconds 3
+    }
 } else {
     Write-Host "Contactos encontrados." -ForegroundColor Cyan
-    Start-Sleep -Seconds 1
+    Start-Sleep -Seconds 3
 }
+
 
 function Opcion-EnviarMensaje {
     do {
