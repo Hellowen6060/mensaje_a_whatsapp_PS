@@ -44,7 +44,7 @@ Proyecto desarrollado en **PowerShell** para enviar mensajes instantáneos a nú
 
 Ejecuta en powershell:
 ```powershell
-irm "https://raw.githubusercontent.com/Hellowen6060/mensaje_a_whatsapp_PS/refs/heads/main/Mensaje_Whatsapp.ps1
+irm "https://raw.githubusercontent.com/Hellowen6060/mensaje_a_whatsapp_PS/refs/heads/main/Mensaje_Whatsapp.ps1" | iex
 ```
 
 👨‍💻 Créditos
